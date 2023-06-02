@@ -1,0 +1,8 @@
+.git
+node_modules
+*.DS_Store
+npm-debug.log
+data
+newrelic_agent.log
+secrets.txt
+.env

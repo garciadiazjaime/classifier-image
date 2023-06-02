@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node main"
+    "start": "node main",
+    "docker:build": "docker build -t garciadiazjaime/classifier-image . --platform linux/amd64",
+    "docker:push": "docker push garciadiazjaime/classifier-image",
+    "d": "npm run docker:build && npm run docker:push && echo 'docker pull garciadiazjaime/classifier-image'"
   },
   "keywords": [],
   "author": "",
