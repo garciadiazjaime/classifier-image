@@ -1,0 +1,20 @@
+{
+  "name": "classifier-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@logtail/node": "^0.4.0",
+    "@tensorflow-models/mobilenet": "^2.1.0",
+    "@tensorflow/tfjs-node": "^4.6.0",
+    "aws-sdk": "^2.1386.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.11"
+  }
+}
