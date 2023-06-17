@@ -8,8 +8,8 @@ const { getImage, savePosts, deletePost } = require("./support/dynamo");
 const { loggerInfo: loggerInfoHelper } = require("./support/log");
 
 const loggerInfo = (msg) => {
-  loggerInfoHelper(`classifier-image: ${msg}`)
-}
+  loggerInfoHelper(`classifier-image: ${msg}`);
+};
 
 const downloadImage = async (path) => {
   loggerInfo(`downloading image: ${path}`);
@@ -33,6 +33,12 @@ const getImageClassification = async (image) => {
 
 async function main() {
   const oldestPost = await getImage();
+
+  if (oldestPost.count < 2) {
+    loggerInfo(`WARN: less than two posts, skipping`);
+    return;
+  }
+
   if (!oldestPost?.post?.secure_url) {
     loggerInfo(`ERROR: invalid URL: ${JSON.stringify(oldestPost)}`);
     return;
